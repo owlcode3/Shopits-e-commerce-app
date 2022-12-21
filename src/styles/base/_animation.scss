@@ -1,0 +1,57 @@
+.nav {
+  &__checkbox:checked + &__toggle &__toggle--line:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0.2rem;
+  }
+  &__checkbox:checked + &__toggle &__toggle--line:nth-child(2) {
+    display: none;
+  }
+  &__checkbox:checked + &__toggle &__toggle--line:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 0.4rem;
+  }
+}
+
+.input-enter {
+  opacity: 0;
+  transform: translateY(-20%);
+}
+
+.input-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: 0.33s visibility ease-in-out, 0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+}
+
+.input-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.input-exit-active {
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: 0.33s visibility ease-in-out, 0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+}
+
+.filters-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.filters-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 0.33s visibility ease-in-out, 0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+}
+
+.filters-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.filters-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 0.33s visibility ease-in-out, 0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+}

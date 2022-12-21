@@ -1,0 +1,32 @@
+.preloader {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  @include flexCol;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+
+  &__brand-name {
+    @include flex(center, center);
+    font-size: 4rem;
+    font-weight: 700;
+    height: 5rem;
+    width: 40rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--color-tertiary);
+  }
+
+  &__fashion-box {
+    font-family: "Dancing Script", cursive;
+    font-size: 2.5rem;
+    height: 10rem;
+    text-transform: uppercase;
+    color: var(--color-tertiary);
+  }
+
+  &__mp {
+    display: block;
+  }
+}

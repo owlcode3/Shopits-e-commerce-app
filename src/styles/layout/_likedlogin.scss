@@ -1,0 +1,25 @@
+.liked-login {
+  @include flex(center, flex-end);
+  height: 2.5rem;
+  padding-right: 5rem;
+  border-bottom: var(--border-line);
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 1.1rem;
+      font-weight: 500;
+      height: 1.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--color-tertiary);
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      &:hover {
+        border-bottom: var(--border-line);
+      }
+    }
+  }
+}

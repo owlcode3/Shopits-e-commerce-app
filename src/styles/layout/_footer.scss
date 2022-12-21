@@ -1,0 +1,44 @@
+.footer {
+  background-color: var(--color-tertiary);
+  &__container {
+    @include flexCol();
+    row-gap: 5rem;
+    padding: 2rem 0.8rem 0.2rem;
+    color: var(--color-primary);
+  }
+
+  &__box-1 {
+    @include flex(center, center);
+    flex-wrap: wrap;
+    gap: 0.9rem 2rem;
+  }
+
+  &__box-2 {
+    @include flex(center, center);
+    column-gap: 2rem;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-primary);
+  }
+
+  &__copyright {
+    text-align: center;
+  }
+
+  &__copy {
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+}

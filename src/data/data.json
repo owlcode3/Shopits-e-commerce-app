@@ -1,0 +1,74 @@
+ [
+    {
+      "id": 1,
+      "name": "Doss Dress",
+      "price": "80,000",
+      "image": "/mi-20.webp"
+    },
+    {
+      "id": 2,
+      "name": "Candice Gown",
+      "price": "180,000",
+      "image": "/mi-26.webp"
+    },
+    {
+      "id": 3,
+      "name": "Midnight Dress",
+      "price": "60,000",
+      "image": "/mi-27.webp"
+    },
+    {
+      "id": 4,
+      "name": "Vivi Dress",
+      "price": "350,000",
+      "image": "/mi-28.webp"
+    },
+    {
+      "id": 5,
+      "name": "Red Dress",
+      "price": "90,000",
+      "image": "/mi-29.webp"
+    },
+    {
+      "id": 6,
+      "name": "Sweatshirt",
+      "price": "30,000",
+      "image": "/mi-30.webp"
+    },
+    {
+      "id": 7,
+      "name": "Sweatshirt pants",
+      "price": "70,000",
+      "image": "/mi-31.webp"
+    },
+    {
+      "id": 8,
+      "name": "covet dione",
+      "price": "65,000",
+      "image": "/mi-32.webp"
+    },
+    {
+      "id": 9,
+      "name": "cavia dress",
+      "price": "290,000",
+      "image": "/mi-33.webp"
+    },
+    {
+      "id": 10,
+      "name": "red velvet",
+      "price": "290,000",
+      "image": "/mi-18.webp"
+    },
+    {
+      "id": 11,
+      "name": "cavia dross",
+      "price": "290,000",
+      "image": "/mi-2.webp"
+    },
+    {
+      "id": 12,
+      "name": "blue peru",
+      "price": "290,000",
+      "image": "/mi-9.webp"
+    }
+  ]

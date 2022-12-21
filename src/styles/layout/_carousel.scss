@@ -1,0 +1,37 @@
+.carousel {
+  list-style: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+
+  &__list {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__img-box {
+    height: 100%;
+    width: 100%;
+
+    &--1 {
+      background: linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3) 100%),
+        url(/bgi-1.webp) center center / cover no-repeat;
+    }
+    &--2 {
+      background: linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3) 100%),
+        url(/bgi-2.webp) center center / cover no-repeat;
+    }
+    &--3 {
+      background: linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3) 100%),
+        url(/bgi-3.webp) center center / cover no-repeat;
+    }
+    &--4 {
+      background: linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3) 100%),
+        url(/bgi-4.webp) center center / cover no-repeat;
+    }
+  }
+}

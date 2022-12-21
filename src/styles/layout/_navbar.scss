@@ -1,0 +1,105 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 0 1rem;
+  transition: all 0.3s;
+  border-bottom: var(--border-line);
+  color: var(--color-tertiary);
+
+  &__checkbox {
+    position: absolute;
+    display: none;
+    left: 2.5rem;
+    opacity: 0;
+    width: 0;
+    @include media("<=62.5rem") {
+      display: block;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    z-index: 9999;
+    @include media("<=62.5rem") {
+      @include flexCol;
+    }
+
+    &--line {
+      position: relative;
+      height: 0.1px;
+      width: 4rem;
+      transition: all 0.4s ease-in-out;
+      background-color: var(--color-tertiary);
+      &:not(:first-child) {
+        margin-top: 0.4rem;
+      }
+      &:not(:last-child) {
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+
+  &__logo {
+    font-size: 3rem;
+  }
+
+  &__icon-box {
+    position: relative;
+    @include flex(center);
+    height: 2.3rem;
+    width: 2.3rem;
+  }
+
+  &__icon {
+    height: 80%;
+    width: 80%;
+    fill: var(--color-tertiary);
+  }
+
+  &__cart-number {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 2rem;
+    width: 2rem;
+    color: var(--color-tertiary);
+  }
+
+  &__lists {
+    list-style: none;
+    @include flex($jc: space-between);
+  }
+
+  &__list:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &__items {
+    list-style: none;
+    @include flex($jc: space-between);
+    font-size: 1.6rem;
+    width: 40rem;
+    @include media("<=62.5rem") {
+      display: none;
+    }
+  }
+
+  &__item:hover {
+    border-bottom: var(--border-line);
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--color-tertiary);
+    }
+  }
+}

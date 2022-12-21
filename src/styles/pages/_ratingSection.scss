@@ -1,0 +1,36 @@
+.review {
+  position: relative;
+  height: 7rem;
+  background-color: var(--color-tertiary);
+  border-bottom: var(--border-line-tertiary);
+  border-top: var(--border-line-tertiary);
+  color: var(--color-primary);
+
+  .review__moving-text {
+    @include flex(center);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .moving--text {
+      font-size: 4rem;
+      font-weight: 400;
+      padding-right: 4.4rem;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1.6rem;
+        height: 0.8rem;
+        width: 0.8rem;
+        border-radius: 50%;
+        margin-left: 1.8rem;
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
