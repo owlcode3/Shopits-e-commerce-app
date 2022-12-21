@@ -1,4 +1,4 @@
- [
+ {"products":[
     {
       "id": 1,
       "name": "Doss Dress",
@@ -72,3 +72,4 @@
       "image": "/mi-9.webp"
     }
   ]
+ }

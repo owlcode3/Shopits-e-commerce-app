@@ -10,7 +10,7 @@ function ProductsSection({ setIsFilterOpen }) {
 
    useEffect(() => {
       if (data) {
-         setProducts(data);
+         setProducts(data.products);
       }
    }, [data]);
 
