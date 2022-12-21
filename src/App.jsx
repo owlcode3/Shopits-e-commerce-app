@@ -16,7 +16,6 @@ function App() {
    const [isLoading, setIsLoading] = useState(true);
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const [isFilterOpen, setIsFilterOpen] = useState(false);
-   console.log(appRef);
 
    useEffect(() => {
       const timer = setTimeout(() => {
