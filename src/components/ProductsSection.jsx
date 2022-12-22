@@ -3,16 +3,16 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { GiWorriedEyes } from "react-icons/gi";
 import { BiHeart } from "react-icons/bi";
 import { useGetClothesQuery } from "../redux/services/productsApi";
-import datas from "../dummydata/data.json";
+
 function ProductsSection({ setIsFilterOpen }) {
    const [products, setProducts] = useState([]);
    const { data, isFetching, error } = useGetClothesQuery();
 
    useEffect(() => {
-      if (datas) {
-         setProducts(datas.products);
+      if (data) {
+         setProducts(data.products);
       }
-   }, [datas]);
+   }, [data]);
 
    return (
       <section className="product">
