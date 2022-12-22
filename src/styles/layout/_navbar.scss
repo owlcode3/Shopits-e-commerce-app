@@ -8,23 +8,13 @@
   transition: all 0.3s;
   border-bottom: var(--border-line);
   color: var(--color-tertiary);
-
-  &__checkbox {
-    position: absolute;
-    display: none;
-    left: 2.5rem;
-    opacity: 0;
-    width: 0;
-    @include media("<=62.5rem") {
-      display: block;
-    }
+  @include media("<=23rem") {
+    padding: 0 0.5rem;
   }
 
   &__toggle {
     display: none;
     cursor: pointer;
-    margin-left: 1.5rem;
-    z-index: 9999;
     @include media("<=62.5rem") {
       @include flexCol;
     }
@@ -32,14 +22,14 @@
     &--line {
       position: relative;
       height: 0.1px;
-      width: 4rem;
+      width: 6rem;
       transition: all 0.4s ease-in-out;
       background-color: var(--color-tertiary);
-      &:not(:first-child) {
-        margin-top: 0.4rem;
+      @include media("<=23rem") {
+        width: 4.5rem;
       }
       &:not(:last-child) {
-        margin-bottom: 0.4rem;
+        margin-bottom: 1.2rem;
       }
     }
   }
@@ -79,6 +69,9 @@
 
   &__list:not(:last-child) {
     margin-right: 2rem;
+    @include media("<=23rem") {
+      margin-right: 1.2rem;
+    }
   }
 
   &__items {
@@ -91,8 +84,23 @@
     }
   }
 
-  &__item:hover {
-    border-bottom: var(--border-line);
+  &__item {
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0.1rem;
+      background-color: var(--color-tertiary);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    &:hover::after {
+      content: "";
+      left: 0;
+      width: 100%;
+    }
   }
 
   &__link {

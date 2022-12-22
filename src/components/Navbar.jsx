@@ -1,32 +1,26 @@
 function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpen }) {
    return (
       <nav className="nav">
-         <input type="checkbox" name="checkbox" className="nav__checkbox" id="checkbox" />
-         <label
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            htmlFor="checkbox"
-            className="nav__toggle"
-         >
+         <div onClick={() => setIsMenuOpen(true)} className="nav__toggle">
             <span className="nav__toggle--line"></span>
             <span className="nav__toggle--line"></span>
-            <span className="nav__toggle--line"></span>
-         </label>
+         </div>
 
          <span className="nav__logo">SHOPITS</span>
 
          <ul className="nav__items">
             <li className="nav__item">
-               <a href="/" className="nav__link">
+               <a href="#" className="nav__link">
                   SHOP
                </a>
             </li>
             <li className="nav__item">
-               <a href="/" className="nav__link">
+               <a href="#" className="nav__link">
                   COLLECTIONS
                </a>
             </li>
             <li className="nav__item">
-               <a href="/" className="nav__link">
+               <a href="#" className="nav__link">
                   ABOUT
                </a>
             </li>
@@ -34,7 +28,7 @@ function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpe
 
          <ul className="nav__lists">
             <li className="nav__list">
-               <a href="/" className="nav__link">
+               <a href="#" className="nav__link">
                   <div onClick={() => setHideInput(!hideInput)} className="nav__icon-box">
                      {windowWidth > 600 ? (
                         <svg className="nav__icon" role="presentation" viewBox="0 0 21 21">
@@ -69,7 +63,7 @@ function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpe
             </li>
 
             <li className="nav__list">
-               <a href="/" className="nav__link">
+               <a href="#" className="nav__link">
                   <div className="nav__icon-box">
                      <span className="nav__cart-number">9</span>
                      {windowWidth > 600 ? (

@@ -1,6 +1,5 @@
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
-import { gsap, Linear } from "gsap";
 import { CSSTransition } from "react-transition-group";
 import Header from "./components/Header";
 import Preloader from "./components/Preloader";
@@ -21,19 +20,8 @@ function App() {
       const timer = setTimeout(() => {
          setIsLoading(false);
       }, 7000);
-
       return () => clearTimeout(timer);
    }, []);
-
-   useLayoutEffect(() => {
-      if (appRef.current) {
-         gsap.fromTo(
-            appRef.current,
-            { yPercent: 100, autoAlpha: 0 },
-            { yPercent: 0, duration: 1, ease: Linear, autoAlpha: 1 }
-         );
-      }
-   }, [isLoading]);
 
    useEffect(() => {
       if (isMenuOpen) {
@@ -62,12 +50,12 @@ function App() {
    ) : (
       <>
          <div ref={appRef} className="App">
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isLoading={isLoading} />
             <RatingSection />
             <ProductsSection isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />
             <NewsLetter />
             <Footer />
-            {isMenuOpen ? <Menu isMenuOpen={isMenuOpen} /> : ""}
+            <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
          </div>
          <CSSTransition timeout={300} in={isFilterOpen} classNames="filters" unmountOnExit>
             <Filter isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />

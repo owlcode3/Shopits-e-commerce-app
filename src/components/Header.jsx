@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import Carousel from "./Carousel";
 import Input from "./Input";
 import Likedlogin from "./Likedlogin";
 import Navbar from "./Navbar";
-import { CSSTransition } from "react-transition-group";
-import Carousel from "./Carousel";
 
-function Header({ isMenuOpen, setIsMenuOpen }) {
+function Header({ isMenuOpen, setIsMenuOpen, isLoading }) {
    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
    const [hideInput, setHideInput] = useState(false);
 
@@ -29,10 +29,10 @@ function Header({ isMenuOpen, setIsMenuOpen }) {
             setIsMenuOpen={setIsMenuOpen}
          />
          <Carousel>
-            <div className="carousel__img-box carousel__img-box--1">&nbsp;</div>
-            <div className="carousel__img-box carousel__img-box--2">&nbsp;</div>
-            <div className="carousel__img-box carousel__img-box--3">&nbsp;</div>
-            <div className="carousel__img-box carousel__img-box--4">&nbsp;</div>
+            <div className="carousel__img-box carousel__img-box--1"></div>
+            <div className="carousel__img-box carousel__img-box--2"></div>
+            <div className="carousel__img-box carousel__img-box--3"></div>
+            <div className="carousel__img-box carousel__img-box--4"></div>
          </Carousel>
          <CSSTransition timeout={300} in={hideInput} classNames="input" unmountOnExit>
             <Input windowWidth={windowWidth} />

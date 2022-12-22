@@ -1,11 +1,12 @@
 .preloader {
+  @include flexCol;
   position: relative;
   height: 100vh;
   width: 100vw;
-  @include flexCol;
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary);
+  visibility: hidden;
 
   &__brand-name {
     @include flex(center, center);
@@ -13,17 +14,23 @@
     font-weight: 700;
     height: 5rem;
     width: 40rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     color: var(--color-tertiary);
   }
 
   &__fashion-box {
-    font-family: "Dancing Script", cursive;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     height: 10rem;
     text-transform: uppercase;
+    text-align: center;
     color: var(--color-tertiary);
+    @include media("<=27rem") {
+      font-size: 2rem;
+    }
+    @include media("<=22rem") {
+      font-size: 1.7rem;
+    }
   }
 
   &__mp {

@@ -1,13 +1,14 @@
-import { gsap, Power1 } from "gsap";
+import { gsap, Power3 } from "gsap";
 import { useEffect, useRef } from "react";
 
 function Preloader() {
    const preloaderRef = useRef(null);
    const q = gsap.utils.selector(preloaderRef);
+
    useEffect(() => {
       if (preloaderRef.current) {
          const tl = gsap.timeline({
-            defaults: { duration: 1, ease: Power1.easeOut, autoAlpha: 1 }
+            defaults: { duration: 1, ease: Power3.easeOut, visibility: "visible" }
          });
          tl.fromTo(q(".preloader__s"), { yPercent: 150, opacity: 0 }, { yPercent: 0, opacity: 1 });
          tl.fromTo(

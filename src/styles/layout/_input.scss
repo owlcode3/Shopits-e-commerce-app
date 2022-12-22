@@ -1,6 +1,6 @@
 .input {
-  position: relative;
   @include flex(center);
+  position: relative;
   height: 6rem;
   width: 100%;
   padding: 0 3rem;
