@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { GiWorriedEyes } from "react-icons/gi";
 import { BiHeart } from "react-icons/bi";
-import { useGetClothesQuery } from "../redux/services/productsApi";
-
+// import { useGetClothesQuery  } from "../redux/services/productsApi";
+import { useGetClothesQuery } from "../../src/redux/services/productsApi";
 function ProductsSection({ setIsFilterOpen }) {
    const [products, setProducts] = useState([]);
    const { data, isFetching, error } = useGetClothesQuery();
