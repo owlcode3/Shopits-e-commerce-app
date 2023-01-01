@@ -53,6 +53,8 @@ function Preloader() {
             { yPercent: 0, opacity: 1 },
             "-=0.1"
          );
+         tl.fromTo(q(".preloader__brand-name"), { opacity: 1, delay: 2 }, { opacity: 0 }, "+=2");
+         tl.fromTo(q(".preloader__fashion-box"), { opacity: 1, delay: 2 }, { opacity: 0 }, "-=0.2");
       }
    }, []);
 

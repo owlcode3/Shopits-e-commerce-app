@@ -1,0 +1,145 @@
+.signup {
+  @include flex(center, center);
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-tertiary);
+
+  &__box {
+    @include flexCol;
+    gap: 10rem;
+    width: 40rem;
+  }
+
+  &__header {
+    @include flex(center, space-between);
+    border-radius: 10px;
+    height: 5rem;
+    padding: 0 0.2rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    border: var(--border-line-tertiary);
+    background-color: rgba(0, 0, 0, 0.1);
+    span {
+      @include flex(center, center);
+      font-size: 1.8rem;
+      font-weight: 600;
+      width: 14rem;
+      height: 90%;
+      border-radius: 10px;
+      cursor: pointer;
+      color: var(--color-primary);
+      transition: all 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+  }
+
+  &__form-body {
+    height: 30rem;
+  }
+
+  &__form {
+    @include flexCol;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  &__input-box {
+    @include flexCol;
+    gap: 1rem;
+  }
+
+  &__input {
+    background: none;
+    border: none;
+    outline: none;
+    height: 4rem;
+    border-bottom: 1px solid var(--color-primary);
+  }
+
+  &__submit-box {
+    @include flexCol;
+    justify-content: space-between;
+    height: 8rem;
+    &--sp {
+      height: 5rem;
+    }
+  }
+
+  &__submit {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    height: 5rem;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    cursor: pointer;
+  }
+
+  &__reset-box {
+    @include flex(center, center);
+    gap: 1rem;
+  }
+
+  &__link,
+  &__link:visited,
+  &__link:link {
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #ff0000;
+  }
+
+  &__pipe {
+    display: block;
+    height: 2rem;
+    width: 0.3px;
+    background-color: var(--color-primary);
+  }
+
+  &__alternatives {
+    @include flexCol;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  &__length-box {
+    @include flex(center, center);
+    gap: 1rem;
+  }
+
+  &__length {
+    display: block;
+    height: 0.3px;
+    width: 10rem;
+    background-color: var(--color-primary);
+  }
+
+  &__lists {
+    list-style: none;
+    @include flex(center, center);
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  &__list {
+    @include flex(center, center);
+    height: 3.8rem;
+    width: 4rem;
+    background-color: var(--color-primary);
+    &--1 {
+      background-color: #00aced;
+    }
+
+    &--2 {
+      background-color: #325a97;
+    }
+
+    &--3 {
+      background-color: #dd4b39;
+    }
+  }
+}

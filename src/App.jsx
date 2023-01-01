@@ -3,12 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import Header from "./components/Header";
 import Preloader from "./components/Preloader";
-import RatingSection from "./components/RatingSection";
 import Menu from "./components/Menu";
-import ProductsSection from "./components/ProductsSection";
-import NewsLetter from "./components/NewsLetter";
 import Footer from "./components/Footer";
 import Filter from "./components/Filter";
+import LoginSignup from "./components/LoginSignup";
+import Home from "./components/Home";
 
 function App() {
    const appRef = useRef(null);
@@ -49,14 +48,18 @@ function App() {
       <Preloader />
    ) : (
       <>
+         <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isLoading={isLoading} />
          <div ref={appRef} className="App">
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isLoading={isLoading} />
-            <RatingSection />
-            <ProductsSection isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />
-            <NewsLetter />
-            <Footer />
-            <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            <Routes>
+               <Route
+                  path="/"
+                  element={<Home isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />}
+               />
+               <Route path="/login" element={<LoginSignup />} />
+            </Routes>
          </div>
+         <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+         <Footer />
          <CSSTransition timeout={300} in={isFilterOpen} classNames="filters" unmountOnExit>
             <Filter isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />
          </CSSTransition>

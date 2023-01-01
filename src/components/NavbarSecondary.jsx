@@ -1,26 +1,26 @@
-function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpen }) {
+function NavbarSecondary({ windowWidth, hideInput, setHideInput, setIsMenuOpen }) {
    return (
-      <nav className="nav">
+      <nav className="nav nav--secondary">
          <div onClick={() => setIsMenuOpen(true)} className="nav__toggle">
-            <span className="nav__toggle--line"></span>
-            <span className="nav__toggle--line"></span>
+            <span className="nav__toggle-line nav__toggle-line--secondary"></span>
+            <span className="nav__toggle-line nav__toggle-line--secondary"></span>
          </div>
 
-         <span className="nav__logo">SHOPITS</span>
+         <span className="nav__logo nav__logo--secondary">SHOPITS</span>
 
          <ul className="nav__items">
-            <li className="nav__item">
-               <a href="#" className="nav__link">
+            <li className="nav__item nav__item--secondary">
+               <a href="#" className="nav__link nav__link--secondary">
                   SHOP
                </a>
             </li>
-            <li className="nav__item">
-               <a href="#" className="nav__link">
+            <li className="nav__item nav__item--secondary">
+               <a href="#" className="nav__link nav__link--secondary">
                   COLLECTIONS
                </a>
             </li>
-            <li className="nav__item">
-               <a href="#" className="nav__link">
+            <li className="nav__item nav__item--secondary">
+               <a href="#" className="nav__link nav__link--secondary">
                   ABOUT
                </a>
             </li>
@@ -31,7 +31,11 @@ function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpe
                <a href="#" className="nav__link">
                   <div onClick={() => setHideInput(!hideInput)} className="nav__icon-box">
                      {windowWidth > 600 ? (
-                        <svg className="nav__icon" role="presentation" viewBox="0 0 21 21">
+                        <svg
+                           className="nav__icon nav__icon--secondary"
+                           role="presentation"
+                           viewBox="0 0 21 21"
+                        >
                            <g
                               transform="translate(1 1)"
                               stroke="currentColor"
@@ -45,7 +49,11 @@ function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpe
                            </g>
                         </svg>
                      ) : (
-                        <svg className="nav__icon" role="presentation" viewBox="0 0 18 17">
+                        <svg
+                           className="nav__icon nav__icon--secondary"
+                           role="presentation"
+                           viewBox="0 0 18 17"
+                        >
                            <g
                               transform="translate(1 1)"
                               stroke="currentColor"
@@ -65,16 +73,24 @@ function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpe
             <li className="nav__list">
                <a href="#" className="nav__link">
                   <div className="nav__icon-box">
-                     <span className="nav__cart-number">9</span>
+                     <span className="nav__cart-number nav__cart-number--secondary">9</span>
                      {windowWidth > 600 ? (
-                        <svg className="nav__icon" role="presentation" viewBox="0 0 19 23">
+                        <svg
+                           className="nav__icon nav__icon--secondary"
+                           role="presentation"
+                           viewBox="0 0 19 23"
+                        >
                            <path
                               d="M0 22.985V5.995L2 6v.03l17-.014v16.968H0zm17-15H2v13h15v-13zm-5-2.882c0-2.04-.493-3.203-2.5-3.203-2 0-2.5 1.164-2.5 3.203v.912H5V4.647C5 1.19 7.274 0 9.5 0 11.517 0 14 1.354 14 4.647v1.368h-2v-.912z"
                               fill="currentColor"
                            ></path>
                         </svg>
                      ) : (
-                        <svg className="nav__icon" role="presentation" viewBox="0 0 17 20">
+                        <svg
+                           className="nav__icon nav__icon--secondary"
+                           role="presentation"
+                           viewBox="0 0 17 20"
+                        >
                            <path
                               d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z"
                               fill="currentColor"
@@ -89,4 +105,4 @@ function Navbar({ windowWidth, hideInput, setHideInput, isMenuOpen, setIsMenuOpe
    );
 }
 
-export default Navbar;
+export default NavbarSecondary;

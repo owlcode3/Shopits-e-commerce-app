@@ -1,40 +1,55 @@
-import { Children, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap, Expo } from "gsap";
+import { useLocation } from "react-router-dom";
 
-function Carousel({ children }) {
-   const ref = useRef(null);
+function Carousel() {
+   const rouselRef = useRef(null);
    const [slideX, setSlideX] = useState(0);
-   const total = Children.toArray(children).length - 1;
+   const [overflowBody, setOverflowBody] = useState(true);
 
    useEffect(() => {
-      const slide = setInterval(() => setSlideX(prev => (prev === total ? 0 : prev + 1)), 4000);
+      if (overflowBody) {
+         document.body.style.overflow = "hidden";
+      } else {
+         document.body.style.overflow = "";
+      }
+   }, []);
+
+   useEffect(() => {
+      if (slideX === 3) {
+         setOverflowBody(false);
+      }
+   }, [slideX]);
+
+   useEffect(() => {
+      const slide = setInterval(() => setSlideX(prev => (prev === 3 ? 0 : prev + 1)), 4000);
       return () => clearInterval(slide);
    }, []);
 
-   useLayoutEffect(() => {
-      const timer = setTimeout(() => {
-         if (ref.current) {
-            gsap.fromTo(
-               ".carousel",
-               { y: "100%", autoAlpha: 0 },
-               { y: "0%", duration: 1, ease: Expo.easeOut, autoAlpha: 1 }
-            );
-         }
-      }, 200);
-      return () => clearTimeout(timer);
-   }, []);
+   const path = useLocation();
+
+   useEffect(() => {
+      if (path.pathname == "/") {
+         rouselRef.current.style.display = "block";
+      } else {
+         rouselRef.current.style.display = "none";
+      }
+   }, [path]);
 
    return (
-      <ul ref={ref} className="carousel">
-         {Children.map(children, (child, i) => (
-            <li
-               key={i}
-               style={{ transform: `translateX(${100 * (i - slideX)}%)` }}
-               className="carousel__list"
-            >
-               {child}
-            </li>
-         ))}
+      <ul ref={rouselRef} className="carousel">
+         <li style={{ transform: `translateX(${100 * (0 - slideX)}%)` }} className="carousel__list">
+            <div className="carousel__img-box carousel__img-box--1"></div>
+         </li>
+         <li style={{ transform: `translateX(${100 * (1 - slideX)}%)` }} className="carousel__list">
+            <div className="carousel__img-box carousel__img-box--2"></div>
+         </li>
+         <li style={{ transform: `translateX(${100 * (2 - slideX)}%)` }} className="carousel__list">
+            <div className="carousel__img-box carousel__img-box--3"></div>
+         </li>
+         <li style={{ transform: `translateX(${100 * (3 - slideX)}%)` }} className="carousel__list">
+            <div className="carousel__img-box carousel__img-box--4"></div>
+         </li>
       </ul>
    );
 }

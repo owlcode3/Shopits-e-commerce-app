@@ -7,9 +7,12 @@
   padding: 0 1rem;
   transition: all 0.3s;
   border-bottom: var(--border-line);
-  color: var(--color-tertiary);
   @include media("<=23rem") {
     padding: 0 0.5rem;
+  }
+
+  &--secondary {
+    border-bottom: var(--border-line-tertiary);
   }
 
   &__toggle {
@@ -19,7 +22,7 @@
       @include flexCol;
     }
 
-    &--line {
+    &-line {
       position: relative;
       height: 0.1px;
       width: 6rem;
@@ -31,11 +34,20 @@
       &:not(:last-child) {
         margin-bottom: 1.2rem;
       }
+
+      &--secondary {
+        background-color: var(--color-primary);
+      }
     }
   }
 
   &__logo {
     font-size: 3rem;
+    color: var(--color-tertiary);
+    &--secondary {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
   }
 
   &__icon-box {
@@ -49,6 +61,9 @@
     height: 80%;
     width: 80%;
     fill: var(--color-tertiary);
+    &--secondary {
+      color: var(--color-primary);
+    }
   }
 
   &__cart-number {
@@ -60,6 +75,10 @@
     height: 2rem;
     width: 2rem;
     color: var(--color-tertiary);
+    &--secondary {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
   }
 
   &__lists {
@@ -90,6 +109,7 @@
       content: "";
       display: block;
       position: absolute;
+      right: 0;
       bottom: 0;
       width: 0;
       height: 0.1rem;
@@ -101,13 +121,24 @@
       left: 0;
       width: 100%;
     }
+
+    &--secondary {
+      &::after {
+        content: "";
+        background-color: var(--color-primary);
+      }
+    }
   }
 
-  &__link {
-    &:link,
-    &:visited {
-      text-decoration: none;
-      color: var(--color-tertiary);
-    }
+  &__link,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--color-tertiary);
+  }
+
+  &__link--secondary {
+    color: var(--color-primary);
+    font-weight: 600;
   }
 }
