@@ -5,21 +5,6 @@ import { useLocation } from "react-router-dom";
 function Carousel() {
    const rouselRef = useRef(null);
    const [slideX, setSlideX] = useState(0);
-   const [overflowBody, setOverflowBody] = useState(true);
-
-   useEffect(() => {
-      if (overflowBody) {
-         document.body.style.overflow = "hidden";
-      } else {
-         document.body.style.overflow = "";
-      }
-   }, []);
-
-   useEffect(() => {
-      if (slideX === 3) {
-         setOverflowBody(false);
-      }
-   }, [slideX]);
 
    useEffect(() => {
       const slide = setInterval(() => setSlideX(prev => (prev === 3 ? 0 : prev + 1)), 4000);

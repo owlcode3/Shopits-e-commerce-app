@@ -12,7 +12,7 @@ function Menu({ isMenuOpen, setIsMenuOpen }) {
          paused: true,
          defaults: { duration: 1, ease: Power4.easeOut, autoAlpha: 1 }
       });
-      tl.current.fromTo(".menu", { xPercent: 100, opacity: 0 }, { xPercent: 0, opacity: 1 });
+      tl.current.to(".menu", { x: "0%", opacity: 1 });
       tl.current.fromTo(
          q(".menu__line--1"),
          { width: 0, left: "0%", opacity: 0 },

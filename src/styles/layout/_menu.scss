@@ -10,6 +10,7 @@
   width: 100%;
   background-color: var(--color-primary);
   z-index: 9999;
+  transform: translateX(100%);
 
   &__close {
     @include flex(center, center);

@@ -6,9 +6,6 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary);
-  z-index: 99999;
-  overflow-y: scroll;
-  overscroll-behavior: contain;
 
   &__brand-name {
     @include flex(center, center);

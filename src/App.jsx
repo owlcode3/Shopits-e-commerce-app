@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Filter from "./components/Filter";
 import LoginSignup from "./components/LoginSignup";
 import Home from "./components/Home";
+import AfterPreloader from "./components/AfterPreloader";
 
 function App() {
    const appRef = useRef(null);
@@ -18,7 +19,7 @@ function App() {
    useEffect(() => {
       const timer = setTimeout(() => {
          setIsLoading(false);
-      }, 7000);
+      }, 7500);
       return () => clearTimeout(timer);
    }, []);
 
@@ -48,6 +49,7 @@ function App() {
       <Preloader />
    ) : (
       <>
+         <AfterPreloader />
          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isLoading={isLoading} />
          <div ref={appRef} className="App">
             <Routes>
@@ -57,8 +59,8 @@ function App() {
                />
                <Route path="/login" element={<LoginSignup />} />
             </Routes>
+            <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
          </div>
-         <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
          <Footer />
          <CSSTransition timeout={300} in={isFilterOpen} classNames="filters" unmountOnExit>
             <Filter isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />
