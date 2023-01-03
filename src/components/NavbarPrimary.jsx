@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function NavbarPrimary({ windowWidth, hideInput, setHideInput, setIsMenuOpen }) {
    return (
       <nav className="nav">
@@ -63,7 +65,7 @@ function NavbarPrimary({ windowWidth, hideInput, setHideInput, setIsMenuOpen }) 
             </li>
 
             <li className="nav__list">
-               <a href="#" className="nav__link">
+               <Link to="/cart" className="nav__link">
                   <div className="nav__icon-box">
                      <span className="nav__cart-number">9</span>
                      {windowWidth > 600 ? (
@@ -82,7 +84,7 @@ function NavbarPrimary({ windowWidth, hideInput, setHideInput, setIsMenuOpen }) 
                         </svg>
                      )}
                   </div>
-               </a>
+               </Link>
             </li>
          </ul>
       </nav>

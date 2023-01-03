@@ -9,6 +9,7 @@ import Filter from "./components/Filter";
 import LoginSignup from "./components/LoginSignup";
 import Home from "./components/Home";
 import AfterPreloader from "./components/AfterPreloader";
+import Cart from "./components/Cart";
 
 function App() {
    const appRef = useRef(null);
@@ -58,6 +59,7 @@ function App() {
                   element={<Home isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />}
                />
                <Route path="/login" element={<LoginSignup />} />
+               <Route path="/cart" element={<Cart />} />
             </Routes>
             <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
          </div>
