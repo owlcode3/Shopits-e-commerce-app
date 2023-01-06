@@ -1,48 +1,40 @@
 .cart {
-  // background-color: rebeccapurple;
   height: auto;
-  @include flex(center, center);
   color: var(--color-primary);
-
-  &__box {
-    @include flexCol;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2.5rem;
-    width: 100%;
-    height: 80%;
-    // background-color: palevioletred;
-  }
+  margin-top: 10rem;
 
   &__body {
-    @include flex(flex-start, center);
+    @include flex(flex-start, space-around);
     width: 100%;
     height: 80%;
     // background-color: plum;
   }
 
   &__heading {
-    align-self: center;
+    text-align: center;
     color: var(--color-primary);
     font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 8rem;
   }
 
   &__items {
     // background-color: red;
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     // height: 200%;
   }
 
   &__item {
-    border-top: var(--border-line-tertiary);
-    display: flex;
+    border-bottom: var(--border-line-tertiary);
+    @include flex;
+    gap: 4rem;
   }
 
   &__order-summary {
     width: 30%;
-    height: 20rem;
+    height: 50rem;
     background-color: green;
   }
 
@@ -51,15 +43,69 @@
   }
 
   &__details {
+    // background-color: firebrick;
+    width: 30rem;
+    @include flexCol;
+    justify-content: space-between;
   }
+
   &__details-box-1 {
+    @include flexCol;
+    height: 80%;
   }
+
   &__details-box-2 {
+    @include flex(center, center);
+    height: 16%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
   }
+
+  &__quality {
+    width: 50%;
+    height: 100%;
+    @include flex(center, space-between);
+    button {
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+    span {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
   &__name-box {
+    @include flex(center, space-between);
+    margin-bottom: 0.3rem;
   }
+
+  &__product-name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__cancel {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
   &__size-color {
+    span {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
   }
+
   &__price-box {
+    justify-self: end;
+    span {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
   }
 }
