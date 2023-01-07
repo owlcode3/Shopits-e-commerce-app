@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import Header from "./components/Header";
 import Preloader from "./components/Preloader";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
@@ -10,9 +9,12 @@ import LoginSignup from "./components/LoginSignup";
 import Home from "./components/Home";
 import AfterPreloader from "./components/AfterPreloader";
 import Cart from "./components/Cart";
+import HeaderSecondary from "./components/HeaderSecondary";
+import HeaderPrimary from "./components/HeaderPrimary";
 
 function App() {
    const appRef = useRef(null);
+   const path = useLocation();
    const [isLoading, setIsLoading] = useState(true);
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -51,7 +53,19 @@ function App() {
    ) : (
       <>
          <AfterPreloader />
-         <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isLoading={isLoading} />
+         {path.pathname == "/" ? (
+            <HeaderPrimary
+               isMenuOpen={isMenuOpen}
+               setIsMenuOpen={setIsMenuOpen}
+               isLoading={isLoading}
+            />
+         ) : (
+            <HeaderSecondary
+               isMenuOpen={isMenuOpen}
+               setIsMenuOpen={setIsMenuOpen}
+               isLoading={isLoading}
+            />
+         )}
          <div ref={appRef} className="App">
             <Routes>
                <Route
