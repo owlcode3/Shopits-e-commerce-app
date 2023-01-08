@@ -51,6 +51,7 @@
 
   &__list {
     border-bottom: var(--border-line-tertiary);
+    padding-bottom: 1rem;
     &--1 {
       font-size: 1.8rem;
       text-transform: capitalize;
@@ -63,10 +64,8 @@
     &--3 {
       @include flexCol;
       gap: 1rem;
+      padding-bottom: 2rem;
     }
-  }
-
-  &__shipping-options {
   }
 
   &__img {
@@ -183,5 +182,22 @@
     color: var(--color-tertiary);
     text-transform: capitalize;
     cursor: pointer;
+  }
+
+  &__shipping-options {
+    height: 22rem;
+    @include flexCol;
+    justify-content: space-between;
+  }
+
+  &__select-box {
+  }
+
+  &__select {
+    width: 25rem;
+    height: 4rem;
+    outline: none;
+    background-color: var(--color-tertiary);
+    text-transform: uppercase;
   }
 }
