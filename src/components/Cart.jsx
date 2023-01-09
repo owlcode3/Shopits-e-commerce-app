@@ -217,6 +217,12 @@ function Cart() {
                         </button>
                      </div>
                   </li>
+                  <li className="cart__list cart__list--4">
+                     <button className="cart__coupon-btn cart__coupon-btn--update">
+                        BACK TO SHOP
+                     </button>
+                     <button className="cart__coupon-btn cart__coupon-btn--update">CHECKOUT</button>
+                  </li>
                </ul>
             </div>
          </div>
