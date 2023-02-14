@@ -1,8 +1,8 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { gsap, Expo } from "gsap";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function Carousel() {
+   const path = useLocation();
    const rouselRef = useRef(null);
    const [slideX, setSlideX] = useState(0);
 
@@ -10,8 +10,6 @@ function Carousel() {
       const slide = setInterval(() => setSlideX(prev => (prev === 3 ? 0 : prev + 1)), 4000);
       return () => clearInterval(slide);
    }, []);
-
-   const path = useLocation();
 
    useEffect(() => {
       if (path.pathname == "/") {

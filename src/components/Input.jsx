@@ -1,4 +1,6 @@
+
 function Input({ windowWidth }) {
+ 
    return (
       <div className="input">
          <div className="input__box">

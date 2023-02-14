@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function NavbarSecondary({ windowWidth, hideInput, setHideInput, setIsMenuOpen }) {
+   const path = useLocation();
    return (
       <nav className="nav nav--secondary">
          <div onClick={() => setIsMenuOpen(true)} className="nav__toggle">
             <span className="nav__toggle-line nav__toggle-line--secondary"></span>
             <span className="nav__toggle-line nav__toggle-line--secondary"></span>
          </div>
-
          <span className="nav__logo nav__logo--secondary">SHOPITS</span>
-
          <ul className="nav__items">
             <li className="nav__item nav__item--secondary">
                <a href="#" className="nav__link nav__link--secondary">
@@ -29,7 +28,7 @@ function NavbarSecondary({ windowWidth, hideInput, setHideInput, setIsMenuOpen }
          </ul>
 
          <ul className="nav__lists">
-            <li className="nav__list">
+            <li className="nav__list" style={{ display: path.pathname == "/" ? "block" : "none" }}>
                <a href="#" className="nav__link">
                   <div onClick={() => setHideInput(!hideInput)} className="nav__icon-box">
                      {windowWidth > 600 ? (
